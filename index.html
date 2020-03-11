@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZADATAK-ANIMACIJA</title>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+    }
+
+    .krug {
+        display: block;
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(217deg, #fb5dad, #55fb9f, #b97aff),
+        linear-gradient(127deg, #fb5dad, #55fb9f, #b97aff),
+        linear-gradient(336deg, #fb5dad, #55fb9f, #b97aff);
+        border-radius: 50%;
+        margin-top: 150px;   
+        box-shadow: 0px 0px 50px grey;
+        filter: blur(1px);
+        animation-name: my-animation;
+        animation: my-animation ease-in infinite linear reverse;
+        }
+        @keyframes my-animation {
+            0% { transform: rotate(0);  
+            }
+            100% { transform: rotate(360deg);  
+            }
+        }
+        .krug::after {
+        content: '';
+        display: inline-block;
+        height: 180px;
+        width: 180px;
+        border-radius:50%;
+        background-color: black;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .krugdva {
+       position: relative;
+        height: 180px;
+        width: 180px;
+        border-radius:50%;
+        background:radial-gradient( #141414  60%, black, black);
+        margin-left: 10px;
+        margin-top: -190px; 
+        animation-name: my-animationtwo;
+        animation: my-animationtwo 1.5s infinite linear reverse;
+    }
+    @keyframes my-animationtwo {
+            0% { transform: scale(1);  
+                height: 180px;
+                width: 180px;
+            }
+            100% { transform: scale(0);  
+                height: 180px;
+                width: 180px;
+            }
+        }
+</style>
+</head>
+<body>
+<div id="animacija">
+<div class="krug"></div>
+<div class="krugdva"></div>
+</div>
+</body>
+</html>
